@@ -15,7 +15,7 @@ if not os.path.exists(object_name):
 
 print "Name of the Object : ", object_name
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(1)
 
 # Define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
@@ -44,3 +44,4 @@ while(cap.isOpened()):
 cap.release()
 out.release()
 cv2.destroyAllWindows()
+print "%s Stopped" %sys.argv[0]

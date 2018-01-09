@@ -44,3 +44,4 @@ while(cap.isOpened()):
 cap.release()
 out.release()
 cv2.destroyAllWindows()
+print "%s Stopped" %sys.argv[0]

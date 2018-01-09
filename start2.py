@@ -7,7 +7,7 @@ import os
 if len(sys.argv) < 2:
 	sys.exit("Object name is missing, run the script with a string as a param")
 
-object_name = sys.argv[1] + "2"
+object_name = sys.argv[1]
 
 # create directory
 if not os.path.exists(object_name):
@@ -21,7 +21,7 @@ cap = cv2.VideoCapture(1)
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
 size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-out = cv2.VideoWriter(object_name + "/" + object_name + ".mp4", fourcc, 2, size)
+out = cv2.VideoWriter(object_name + "/" + object_name + "2" + ".mp4", fourcc, 2, size)
 
 count = 0
 while(cap.isOpened()):
@@ -30,7 +30,7 @@ while(cap.isOpened()):
 
         # write the frame 
         out.write(frame)
-        cv2.imwrite(object_name + "/" + object_name + "_%d.jpg" % count, frame)
+        cv2.imwrite(object_name + "/" + object_name + "2" + "_%d.jpg" % count, frame)
         count += 1
 
 		# write the video

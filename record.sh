@@ -15,6 +15,9 @@ python start2.py $1
 # Kill the first script
 pkill -f start.py
 
+# start uploading to s3
+python upload.py $1
+
 # while true; do
 # 	echo "Press s to stop the recording"
 # 	read input

@@ -21,6 +21,8 @@ def upload_directory(src_dir, bucket_name, dst_dir):
 		s3_resource.Object(bucket_name, os.path.join(dst_dir, os.path.relpath(filename, src_dir)))\
 		.put(Body=open(filename, 'rb'))
 
+	print "All files uploaded successfully"
+
 
 if __name__ == '__main__':
 

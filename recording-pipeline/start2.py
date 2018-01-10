@@ -18,10 +18,10 @@ print "Name of the Object : ", object_name
 cap = cv2.VideoCapture(1)
 
 # Define the codec and create VideoWriter object
-fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+fourcc = cv2.VideoWriter_fourcc(*'MJPG')
 size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-out = cv2.VideoWriter(object_name + "/" + object_name + "2" + ".mp4", fourcc, 2, size)
+out = cv2.VideoWriter(object_name + "/" + object_name + "2" + ".avi", fourcc, 30, size)
 
 count = 0
 while(cap.isOpened()):

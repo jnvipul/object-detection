@@ -9,6 +9,7 @@
 
 
 # execute recording script
+mkdir $1
 python start.py $1 &
 python start2.py $1
 

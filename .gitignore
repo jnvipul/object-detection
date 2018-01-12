@@ -1,5 +1,0 @@
-tensorflow-workspace/output_images/
-tensorflow-workspace/test_images
-Data
-*.pb
-*.tar.gz

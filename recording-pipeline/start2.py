@@ -15,7 +15,7 @@ if not os.path.exists(object_name):
 
 print "Name of the Object : ", object_name
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(2)
 
 # Define the codec and create VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')

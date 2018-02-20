@@ -22,9 +22,9 @@ the paths and names input directories(images and annotation) and output tfrecord
 (note: this script can be enhanced to use flags instead of changing parameters on code).
 default expected directories tree:
 dataset- 
-   -originals
+   -raw_images
    -annotations
-    dataset_to_tfrecord.py   
+    create_tfrecord.py   
 to run this script:
 $ python dataset_to_tfrecord.py 
 '''
@@ -71,7 +71,7 @@ def create_example(xml_file):
            poses.append('Unspecified'.encode('utf8'))
 
         #read corresponding image
-        full_path = os.path.join('../Data/originals', '{}'.format(image_name))  #provide the path of images directory
+        full_path = os.path.join('data/raw_images', '{}'.format(image_name))  #provide the path of images directory
         with tf.gfile.GFile(full_path, 'rb') as fid:
             encoded_jpg = fid.read()
         encoded_jpg_io = io.BytesIO(encoded_jpg)
@@ -102,10 +102,10 @@ def create_example(xml_file):
         return example	
 		
 def main(_):
-    writer_train = tf.python_io.TFRecordWriter('../Data/train.record')     
-    writer_test = tf.python_io.TFRecordWriter('../Data/test.record')
+    writer_train = tf.python_io.TFRecordWriter('data/train.record')     
+    writer_test = tf.python_io.TFRecordWriter('data/val.record')
     #provide the path to annotation xml files directory
-    filename_list=tf.train.match_filenames_once("../Data/annotations/*.xml")
+    filename_list=tf.train.match_filenames_once("data/annotations/*.xml")
     print(filename_list)
     init = (tf.global_variables_initializer(), tf.local_variables_initializer())
     sess=tf.Session()

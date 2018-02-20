@@ -1,5 +1,6 @@
 tensorflow-workspace/output_images/
 tensorflow-workspace/test_images
+tensorflow-workspace/base_model
 Data
 *.pb
 *.tar.gz

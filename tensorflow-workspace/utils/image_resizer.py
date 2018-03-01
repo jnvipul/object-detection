@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 
-# TODO - Right now it assumes that files in the directory are image file
+# TODO - Right now it assumes that files in the directory are image files
 def resize_all(path_to_directory, new_width = 540):
 	""" Resize all the images in the directory
 

@@ -30,7 +30,7 @@ while(cap.isOpened()):
 
         # write the frame 
         out.write(frame)
-        cv2.imwrite(object_name + "/" + object_name + "_%d.jpg" % count, frame)
+        cv2.imwrite(object_name + "/" + object_name + "_c1" + "_%d.jpg" % count, frame)
         count += 1
 
 		# write the video

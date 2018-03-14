@@ -61,9 +61,11 @@ def create_example(xml_file):
            #corresponding integer number, u can use next function structure
            
            def class_text_to_int(row_label):
-              if row_label == 'cola':
+              if row_label == 'calbee':
                   return 1
-            
+              if row_label == 'g_pretz':
+                return 2
+
 
            classes.append(class_text_to_int(member[0].text))   # i wrote 1 because i have only one class(person)
            truncated.append(0)
